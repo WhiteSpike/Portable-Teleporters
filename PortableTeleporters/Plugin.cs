@@ -42,6 +42,7 @@ namespace PortableTeleporters
 
             Item portableTeleporterItem = ScriptableObject.CreateInstance<Item>();
             portableTeleporterItem.name = "PortableTeleporterItemProperties";
+            portableTeleporterItem.creditsWorth = Config.PORTABLE_PRICE;
             portableTeleporterItem.allowDroppingAheadOfPlayer = Config.PORTABLE_DROP_AHEAD_PLAYER;
             portableTeleporterItem.canBeGrabbedBeforeGameStart = Config.PORTABLE_GRABBED_BEFORE_START;
             portableTeleporterItem.canBeInspected = false;
@@ -77,6 +78,7 @@ namespace PortableTeleporters
 
             portableTeleporterItem = ScriptableObject.CreateInstance<Item>();
             portableTeleporterItem.name = "AdvancedPortableTeleporterItemProperties";
+            portableTeleporterItem.creditsWorth = Config.ADVANCED_PORTABLE_PRICE;
             portableTeleporterItem.allowDroppingAheadOfPlayer = Config.PORTABLE_DROP_AHEAD_PLAYER;
             portableTeleporterItem.canBeGrabbedBeforeGameStart = Config.PORTABLE_GRABBED_BEFORE_START;
             portableTeleporterItem.canBeInspected = false;
