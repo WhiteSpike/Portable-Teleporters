@@ -2,6 +2,14 @@
 {
     internal class AdvancedPortableTeleporter : BasePortableTeleporter
     {
+        protected override bool KeepScanNode
+        {
+            get
+            {
+                return Plugin.Config.ADVANCED_PORTABLE_SCAN_NODE;
+            }
+        }
+
         public override void Start()
         {
             base.Start();

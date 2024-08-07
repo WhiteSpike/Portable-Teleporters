@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PortableTeleporters.Behaviour
 {
-    internal class BasePortableTeleporter : PortableTeleporterBehaviour
+    internal abstract class BasePortableTeleporter : PortableTeleporterBehaviour
     {
         /// <summary>
         /// Sounds played when interacting with the portable teleporter
@@ -19,9 +19,12 @@ namespace PortableTeleporters.Behaviour
         /// </summary>
         protected float breakChance;
 
+        protected abstract bool KeepScanNode { get; }
+
         public override void Start()
         {
             base.Start();
+            if (!KeepScanNode) Destroy(gameObject.GetComponentInChildren<ScanNodeProperties>());
             audio = GetComponent<AudioSource>();
             ItemBreak = Plugin.ItemBreak;
             error = Plugin.Error;
